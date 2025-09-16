@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/versionB.css">
+    <title>Proceso de Compra - Versión B</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Resumen de tu compra</h2>
+        <div class="order-summary">
+            <div class="order-item"><span>1 zapatillas deportivas</span><span>$119.200</span></div>
+            <div class="order-item"><span>Descuento</span><span>-$29.800</span></div>
+            <div class="order-item"><span>Subtotal</span><span>$89.400</span></div>
+            <div class="order-item"><span>Entrega</span><span>Gratis</span></div>
+            <div class="order-item"><strong>Total</strong><strong>$89.400</strong></div>
+        </div>
+
+        <!-- TODOS LOS CAMPOS EN UN SOLO FORMULARIO -->
+        <form id="bigForm">
+            <h2>Detalles de envío</h2>
+            <div class="form-group"><label>Nombre completo</label><input type="text"></div>
+            <div class="form-group"><label>Dirección</label><input type="text"></div>
+            <div class="form-group"><label>Número</label><input type="text"></div>
+            <div class="form-group"><label>Código postal</label><input type="text"></div>
+            <div class="form-group"><label>Teléfono</label><input type="text"></div>
+
+            <h2>Datos de pago</h2>
+            <div class="form-group"><label>Nro de Tarjeta</label><input type="text"></div>
+            <div class="form-group"><label>Titular</label><input type="text"></div>
+            <div class="form-group"><label>DNI</label><input type="text"></div>
+            <div class="form-group"><label>Vencimiento</label><input type="text"></div>
+            <div class="form-group"><label>CVC</label><input type="text"></div>
+
+            <h2>Opciones adicionales</h2>
+            <div class="form-group"><label>Comentario adicional</label><input type="text"></div>
+
+            <a href="index.html" class="btn btn-secondary">Volver</a>
+            <button class="btn btn-success">Pagar</button>
+        </form>
+        <!-- Explicación de por qué NO cumple las leyes -->
+        <section class="ux-laws">
+            <h2>Explicación del Diseño</h2>
+
+            <div class="law">
+                <h3>Ley de Hick</h3>
+                <p>
+                    El formulario muestra todas las opciones y pasos al mismo tiempo
+                    (<strong>resumen, envío, pago, campos extra</strong>).
+                </p>
+                <p>
+                    El usuario debe decidir entre demasiados campos y botones a la vez,
+                    lo que aumenta el tiempo de decisión y la confusión.
+                </p>
+                <p>
+                    No hay un flujo guiado paso a paso → genera sobrecarga cognitiva.
+                    Esto rompe la Ley de Hick porque más opciones = más tiempo y dificultad para decidir.
+                </p>
+            </div>
+
+            <div class="law">
+                <h3>Ley de Miller</h3>
+                <p>
+                    Se muestran muchos campos en un solo bloque: datos personales, dirección, tarjeta, campos extra.
+                </p>
+                <p>
+                    La memoria de trabajo humana puede manejar 7 ± 2 elementos, pero aquí hay más de 15 ítems
+                    que el usuario debe procesar.
+                </p>
+                <p>
+                    No hay agrupación (<em>chunking</em>) ni división en pasos claros → el usuario se siente abrumado.
+                    Esto rompe la Ley de Miller porque se supera el límite de la memoria de corto plazo
+                    y no se organiza la información en grupos manejables.
+                </p>
+            </div>
+        </section>
+
+    </div>
+    <script src="js/versionB.js"></script>
+</body>
+</html>

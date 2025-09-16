@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leyes de Hick y Miller — Comparación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <div class="container" role="main">
+        <header>
+            <div class="header-content">
+                <h1>Laws of UX es una colección de mejores prácticas que los diseñadores pueden considerar al crear interfaces de usuario.</h1>
+            </div>
+        </header>
+
+        <!-- Comparación Hick y Miller -->
+        <section class="grid" aria-label="Comparación de Leyes">
+            <article class="card hick-card" id="hick" aria-labelledby="hick-title">
+                <div class="card-header">
+                    <h2 id="hick-title">¿Qué dice la Ley de Hick?</h2>
+                </div>
+                <div class="card-content">
+                    <p class="law-description">La <strong>Ley de Hick</strong> establece que <strong>cuantas más opciones tiene una persona y más complejas son, más tiempo tarda en tomar una decisión.</strong></p>
+                    
+                    <div class="keys-section">
+                        <h3>Claves para aplicarla</h3>
+                        <ul class="keys-list">
+                            <li><span class="key-point">Reducir opciones innecesarias.</span></li>
+                            <li><span class="key-point">Dividir tareas complejas en pasos pequeños.</span></li>
+                            <li><span class="key-point">Guiar resaltando lo más importante.</span></li>
+                            <li><span class="key-point">Onboarding progresivo.</span></li>
+                            <li><span class="key-point">No simplificar en exceso.</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="note hick-note" role="note">
+                        <div class="note-icon"></div>
+                        <div class="note-text">Cuando el tiempo de respuesta es crítico, menos opciones = decisiones más rápidas.</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card miller-card" id="miller" aria-labelledby="miller-title">
+                <div class="card-header">
+                    <h2 id="miller-title">¿Qué dice la Ley de Miller?</h2>
+                </div>
+                <div class="card-content">
+                    <p class="law-description">La <strong>Ley de Miller</strong> plantea que <strong>una persona promedio mantiene alrededor de 7 elementos (±2) en la memoria de trabajo</strong>.</p>
+                    
+                    <div class="keys-section">
+                        <h3>Claves para aplicarla</h3>
+                        <ul class="keys-list">
+                            <li><span class="key-point">No uses el "número mágico 7" de forma rígida.</span></li>
+                            <li><span class="key-point">Agrupa la información en bloques.</span></li>
+                            <li><span class="key-point">Considera la variabilidad de cada usuario.</span></li>
+                            <li><span class="key-point">Listas cortas, menús claros, pasos pequeños.</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="note miller-note" role="note">
+                        <div class="note-icon"></div>
+                        <div class="note-text">Divide y agrupa para reducir la carga cognitiva.</div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Ejemplos de diseño -->
+        <section class="examples-section" aria-label="Ejemplos de diseño">
+            <div class="section-header">
+                <h2>Ejemplos Prácticos</h2>
+                <p>Compara cómo se aplican estas leyes en el diseño</p>
+            </div>
+            
+            <div class="examples-grid">
+                <article class="example-card good-example">
+                    <div class="example-header">
+                        <div class="example-icon">✅</div>
+                        <h3>Diseño que Respeta las Leyes</h3>
+                    </div>
+                    <div class="example-content">
+                        <p>Interfaces claras, con opciones bien organizadas, accesibles y fáciles de usar. Ayudan al usuario a decidir rápido sin sobrecargar la memoria.</p>
+                        <a href="VersionA.html" class="example-btn good-btn">
+                            <span>Ver ejemplo — Versión A</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="example-card bad-example">
+                    <div class="example-header">
+                        <div class="example-icon">❌</div>
+                        <h3>Diseño que No las Cumple</h3>
+                    </div>
+                    <div class="example-content">
+                        <p>Interfaces confusas, con demasiadas opciones y desorganizadas. Generan dificultad, confusión y una experiencia frustrante.</p>
+                        <a href="versionB.html" class="example-btn bad-btn">
+                            <span>Ver ejemplo — Versión B</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <p>Principios fundamentales para crear mejores experiencias de usuario</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

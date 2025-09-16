@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/versionA.css">
+    <title>Proceso de Compra</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Proceso de Compra</h1>
+        </div>
+
+        <div class="progress-bar">
+            <div class="step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-title">Resumen</div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-title">Envío</div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-title">Pago</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Paso 1: Resumen de compra -->
+            <div class="step-content active" id="step1">
+                <h2>Resumen de tu compra</h2>
+                <div class="order-summary">
+                    <div class="order-item">
+                        <span>1 zapatillas deportivas</span>
+                        <span>$119.200,00</span>
+                    </div>
+                    <div class="order-item">
+                        <span>Descuentos</span>
+                        <span style="color: #27ae60;">-$29.800,00</span>
+                    </div>
+                    <div class="order-item">
+                        <span>Subtotal</span>
+                        <span>$89.400,00</span>
+                    </div>
+                    <div class="order-item">
+                        <span>Entrega</span>
+                        <span style="color: #27ae60;">Gratis</span>
+                    </div>
+                    <div class="order-item total">
+                        <span>Total</span>
+                        <span>$89.400,00</span>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="btn btn-secondary" onclick="continueShopping()">Continuar comprando</button>
+                    <button class="btn btn-primary" onclick="nextStep()">Continuar</button>
+                </div>
+            </div>
+
+            <!-- Paso 2: Detalles de envío -->
+            <div class="step-content" id="step2">
+                <h2>Detalles de envío</h2>
+                <form id="shippingForm">
+                    <div class="form-group">
+                        <label for="fullName">Nombre completo</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <div class="error" id="fullNameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Dirección</label>
+                        <input type="text" id="address" name="address" required>
+                        <div class="error" id="addressError"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="number">Número</label>
+                            <input type="text" id="number" name="number" required>
+                            <div class="error" id="numberError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="postalCode">Código postal</label>
+                            <input type="text" id="postalCode" name="postalCode" required>
+                            <div class="error" id="postalCodeError"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <div class="error" id="phoneError"></div>
+                    </div>
+                </form>
+                <div class="buttons">
+                    <button class="btn btn-secondary" onclick="prevStep()">Volver</button>
+                    <button class="btn btn-primary" onclick="validateAndNext()">Continuar</button>
+                </div>
+            </div>
+
+            <!-- Paso 3: Pago -->
+            <div class="step-content" id="step3">
+                <h2>Complete con los datos de la tarjeta</h2>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="cardNumber">Nro de Tarjeta</label>
+                        <div class="card-input">
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456"
+                                maxlength="19" required>
+                            <div class="card-icon" id="cardIcon"></div>
+                        </div>
+                        <div class="error" id="cardNumberError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardHolder">Titular</label>
+                        <input type="text" id="cardHolder" name="cardHolder" required>
+                        <div class="error" id="cardHolderError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dni">DNI</label>
+                        <input type="text" id="dni" name="dni" required>
+                        <div class="error" id="dniError"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Vencimiento</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/AA" maxlength="5" required>
+                            <div class="error" id="expiryError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" name="cvc" placeholder="123" maxlength="4" required>
+                            <div class="error" id="cvcError"></div>
+                        </div>
+                    </div>
+                </form>
+                <div class="buttons">
+                    <button class="btn btn-secondary" onclick="prevStep()">Volver</button>
+                    <button class="btn btn-success" onclick="processPayment()">Pagar $89.400,00</button>
+                </div>
+            </div>
+        </div>
+        <!-- Explicación de las Leyes de UX -->
+        <section class="ux-laws">
+            <h2>Explicación del Diseño</h2>
+
+            <div class="law">
+                <h3>Ley de Hick</h3>
+                <p>
+                    La compra está dividida en pasos (<strong>Resumen → Envío → Pago</strong>).
+                    Esto evita que el usuario tenga que tomar demasiadas decisiones al mismo tiempo.
+                </p>
+                <p>
+                    En cada pantalla se muestran solo las opciones necesarias (por ejemplo,
+                    en el paso de pago solo se piden los datos de la tarjeta).
+                    Esto reduce la carga cognitiva y facilita la decisión de avanzar.
+                </p>
+            </div>
+
+            <div class="law">
+                <h3>Ley de Miller</h3>
+                <p>
+                    La información está agrupada en bloques (<em>chunking</em>):
+                </p>
+                <ul>
+                    <li>Paso 1: Resumen de compra</li>
+                    <li>Paso 2: Datos de envío</li>
+                    <li>Paso 3: Datos de pago</li>
+                </ul>
+                <p>
+                    No se obliga al usuario a recordar más de 7 elementos al mismo tiempo,
+                    porque cada paso muestra solo lo esencial.
+                </p>
+            </div>
+        </section>
+
+    </div>
+    <script src="js/versionA.js"></script>
+</body>
+
+</html>
